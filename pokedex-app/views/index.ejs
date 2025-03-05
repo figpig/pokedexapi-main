@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex Generations</title>
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+<body>
+    <h1>Pokedex</h1>
+
+    <div class="generations">
+        <% generations.forEach((gen) => { %>
+            <div class="generation-box">
+                <a href="/generation/<%= gen.number %>"><%= gen.roman %></a>
+            </div>
+        <% }); %>
+    </div>
+
+</body>
+</html>
