@@ -1,0 +1,16 @@
+<%- include('partials/header', { otsikko: 'Etusivu'}) %>
+<body>
+    
+
+    <h1>Pokedex</h1>
+
+    <div class="generations">
+        <% generations.forEach((gen) => { %>
+            <div class="generation-box">
+                <a href="/generation/<%= gen.number %>"><%= gen.roman %></a>
+            </div>
+        <% }); %>
+    </div>
+
+<%- include('partials/footer', { showReturnLink: false }) %>
+

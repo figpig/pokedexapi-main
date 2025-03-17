@@ -1,0 +1,20 @@
+<%- include('partials/header', { otsikko: 'generaatio'}) %>
+<body>
+    <h1>Pokedex</h1>
+
+    <% if (pokemonList && pokemonList.length) { %>
+        <% pokemonList.sort((a, b) => a.name.localeCompare(b.name)); %> 
+        <div class="pokemon-list">
+            <% pokemonList.forEach(pokemon => { %>
+                <div>
+                    <a href="<%= pokemon.url %>"><%= pokemon.name %></a>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <p>Ei Pokemoneja tässä generaatiosta.</p>
+    <% } %>
+
+    
+<%- include('partials/footer', { showReturnLink: true }) %>
+
